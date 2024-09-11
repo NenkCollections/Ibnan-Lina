@@ -32,7 +32,7 @@
       <p>The Wedding Of</p>
       <h1>Lina & Ibnan</h1>
       <p>Sabtu, 05 Oktober 2024</p>
-      <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
+      <h4>Kepada <span>Bapak/Ibu/Saudara/i: </span></h4>
       <p>di</p>
       <p>Tempat</p>
       <p></p>
@@ -418,7 +418,7 @@
     simplyCountdown('.simply-countdown', {
       year: 2024, // required
       month: 10, // required
-      day: 04, // required
+      day: 05, // required
       hours: 8, // Default is 0 [0-23] integer
       words: { //words displayed into the countdown
         days: { singular: 'hari', plural: 'hari' },
@@ -469,7 +469,7 @@
     }
 
     function playAudio() {
-      song.volume = 0.9;
+      song.volume = 1.0;
       audioIconWrapper.style.display = 'flex';
       song.play();
       isPlaying = true;
@@ -514,7 +514,7 @@
   </script>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const nama = urlParams.get('n') || '';
+    const nama = urlParams.get('to') || '';
     const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
     const namaContainer = document.querySelector('.hero h4 span');
     namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
