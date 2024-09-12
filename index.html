@@ -114,7 +114,6 @@
     </div>
   </section>
 
-
   <section id="info" class="info">
     <div class="container">
       <div class="row justify-content-center">
@@ -518,7 +517,7 @@
     const nama = urlParams.get('to') || '';
     const pronoun = urlParams.get('p') || '';
     const namaContainer = document.querySelector('.hero h4 span');
-    namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
+    namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, '');
 
     document.querySelector('#nama').value = nama;
   </script>
