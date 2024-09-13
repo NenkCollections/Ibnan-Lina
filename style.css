@@ -1,9 +1,6 @@
 :root {
-  --pink: #363542;
+  --pink: #f14e95;
   --bg: #0a0a0a;
-  --bgJam: #8785a2;
-  --FontWhite: #ffffff;
-
   --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
 }
 
@@ -100,19 +97,6 @@ body {
   color: var(--pink);
   font-family: 'Sacramento';
   font-size: 5rem;
-  font-weight: bold;
-}
-
-.home .couple h4 {
-  font-family: 'Sacramento';
-  font-size: 1.5rem;
-  color: var(--pink);
-}
-.info h2,
-.rsvp h2 {
-  color: var(--FontWhite);
-  font-family: 'Sacramento';
-  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -359,13 +343,13 @@ footer {
 }
 
 footer a {
-  color: var(--bgJam);
+  color: var(--bg);
   font-weight: bold;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: yellow;
+  color: white;
 }
 
 footer li {
