@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -337,33 +338,110 @@
         </div>
       </form>
 
-      <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
-          <div id="disqus_thread"></div>
-          <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-
-            var disqus_config = function () {
-              this.page.url = 'https://nenkcollections.github.io/Lina-Ibnan/';  // Replace PAGE_URL with your page's canonical URL variable
-              this.page.identifier = 'https://nenkcollections.github.io/Lina-Ibnan/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-
-            (function () { // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
-              s.src = 'https://pernikahan-lina-ibnan-1.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-            })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-              Disqus.</a></noscript>
+    <div class="container py-5">
+      <div class="row text-center justify-content-center">
+        <div class="col-12 mb-5" data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="2250">
+          <h2 class="font-dancing fs-50">Doa dan Pesan</h2>
+          
+           </div>
+        <div class="col-md-10 col-12 mx-2" data-aos="zoom-in" data-aos-duration="1300" data-aos-delay="2500">
+          <div class="card bg-fee rounded-3 p-3">
+            <div class="container">
+              <div class="row justify-content-center">
+              <div class="col-md-8 col-10 text-center">
+              
+              <div><span id="comment">0</span> Komentar</div>
+              <div class="text"><h3>Do'a Restu Anda Merupakan Karunia Yang Sangat Berarti Bagi Kami</h3></div>
+              <div class="comments"></div>
+              <div class="commentbox">
+                  <img src="user1.png" alt="">
+                  <div class="content">
+                      <h3>Komentar Sebagai: </h3>
+                      <div class="commentinput"></div>
+                          <input type="text" placeholder="Nama Anda" class="user">
+      
+                      <div class="commentinput">
+                          <input type="text" placeholder="Beri Komentar" class="usercomment">
+                          <div class="buttons">
+                              <button type="submit" disabled id="publish">Kirim</button>
+                              <div class="notify">
+                                  <input type="checkbox" class="notifyinput"> <span>Beri Tahu saya</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+      <script>
+      
+      
+      
+      const USERID = {
+          name: null,
+          identity: null,
+          image: null,
+          message: null,
+          date: null
+      }
+      
+      const userComment = document.querySelector(".usercomment");
+      const publishBtn = document.querySelector("#publish");
+      const comments = document.querySelector(".comments");
+      const userName = document.querySelector(".user");
+      const notify = document.querySelector(".notifyinput");
+      
+          userComment.addEventListener("input", e => {
+              if(!userComment.value) {
+                  publishBtn.setAttribute("disabled", "disabled");
+                  publishBtn.classList.remove("abled")
+              }else {
+                  publishBtn.removeAttribute("disabled");
+                  publishBtn.classList.add("abled")
+              }
+          })
+      
+          function addPost() {
+              if(!userComment.value) return;
+              USERID.name = userName.value;
+              if(USERID.name === "Nama Anda") {
+                  USERID.identity = false;
+                  USERID.image = "anonymous.png"
+              }else {
+                  USERID.identity = true;
+                  USERID.image = "user.png"
+              }
+      
+              USERID.message = userComment.value;
+              USERID.date = new Date().toLocaleString();
+              let published = 
+              `<div class="parents">
+                  <img src="${USERID.image}">
+                  <div>
+                      <h1>${USERID.name}</h1>
+                      <h1>${USERID.message}</h1>
+                      <div class="engagements"><img src="like.png" id="like"><img src="share.png" alt=""></div>
+                      <span class="date">${USERID.date}</span>
+                  </div>    
+              </div>`
+      
+              comments.innerHTML += published;
+              userComment.value = "";
+              publishBtn.classList.remove("abled")
+      
+              let commentsNum = document.querySelectorAll(".parents").length;
+              document.getElementById("comment").textContent = commentsNum;
+      
+          }
+      
+          publishBtn.addEventListener("click", addPost);
+      
+      </script>
         </div>
       </div>
     </div>
   </section>
-
+  <!-- Ucapan end -->
   <section id="gifts" class="gifts">
     <div class="container">
       <div class="row justify-content-center">
