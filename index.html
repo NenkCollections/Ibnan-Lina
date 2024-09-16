@@ -393,7 +393,7 @@
       
           userComment.addEventListener("input", e => {
               if(!userComment.value) {
-                  publishBtn.setAttribute("abled", "abled");
+                  publishBtn.setAttribute("disable", "disable");
                   publishBtn.classList.remove("abled")
               }else {
                   publishBtn.removeAttribute("abled");
